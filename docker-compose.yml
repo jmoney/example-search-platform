@@ -1,0 +1,7 @@
+version: '2.0'
+services:
+    datastore:
+        ports:
+            - "9200:9200"
+            - "9300:9300"
+        image: elasticsearch-search-platform-example:latest
