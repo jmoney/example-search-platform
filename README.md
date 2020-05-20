@@ -1,4 +1,6 @@
-# example-search-platform
+# Example Search Platform
+
+Demonstratest at a high level the various pieces needed to implement a resilient high performant search platform.
 
 ## Building
 
