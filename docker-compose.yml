@@ -5,3 +5,12 @@ services:
             - "9200:9200"
             - "9300:9300"
         image: elasticsearch-search-platform-example:latest
+    indexer:
+        depends_on:
+          - datastore
+        ports:
+          - "8000:8000"
+        environment: 
+          - SERVER_PORT=8000
+          - ELASTICSEARCH_URL=http://172.29.0.1:9200
+        image: lambda-server:latest

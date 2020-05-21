@@ -1,11 +1,14 @@
 all: build
 
-build: datastore
+build: datastore indexer
 
 datastore:
 	$(MAKE) -C datastore
 
-run: datastore
+indexer:
+	$(MAKE) -C indexer
+
+run: datastore indexer
 	docker-compose up
 
 clean:
