@@ -5,7 +5,8 @@
     "mappings" : {
         "properties" : {
             "agentid" : { "type" : "text" },
-            "datasetid": { "type" : "text" }
+            "datasetid": { "type" : "text" },
+            "numversion": { "type" : "number" }
         }
     }
 }

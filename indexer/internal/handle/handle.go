@@ -20,8 +20,9 @@ var (
 )
 
 type IndexDocument struct {
-	AgentID   string `json:agentid`
-	DatasetID string `json:datasetid`
+	AgentID    string `json:agentid`
+	DatasetID  string `json:datasetid`
+	NumVersion string `json:numversion`
 }
 
 func init() {
@@ -49,16 +50,17 @@ func Request(event events.DynamoDBEvent) error {
 	}
 
 	for _, record := range event.Records {
-		agentid := record.Change.Keys["agentid"].String()
-		datasetid := record.Change.Keys["datasetid"].String()
-		numVersions, _ := record.Change.NewImage["numVersions"].Integer()
+		agentid := record.Change.Keys["agentid"].String() # FIXME: Check Type
+		datasetid := record.Change.Keys["datasetid"].String() # FIXME: Check Type
+		numVersions, _ := record.Change.NewImage["numVersions"].Integer() # FIXME: Check Type
 
 		infoLogger.Printf("%s %s", agentid, datasetid)
 
 		// Build the request body.
 		indexDocument := IndexDocument{
-			AgentID:   agentid,
-			DatasetID: datasetid,
+			AgentID:    agentid,
+			DatasetID:  datasetid,
+			NumVersion: strconv.FormatInt(numVersions, 10),
 		}
 
 		jsonDocument, _ := json.Marshal(indexDocument)

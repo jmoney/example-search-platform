@@ -16,4 +16,5 @@
 
 * [ ] Diagram the data flow
 * [ ] Document the mappings field types
+* [ ] Document E2E script
 * [ ] Document resiliency enhancements
