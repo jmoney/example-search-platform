@@ -16,4 +16,10 @@ This will build each module individually and create the necessary docker images 
 make run
 ```
 
+and then in another window
+
+```bash
+cd search && ./gradlew run
+```
+
 The above will use docker-compose to orchestrate all the build docker images and start them up in the necessary order for the pipeline to work.

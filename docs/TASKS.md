@@ -6,9 +6,12 @@
 * [x] Build scaffold for elasticsearch index
 * [x] Script to stream file to indexer
 * [x] Build scaffold for indexer written using lambda
-* [ ] Build scaffold for search services in REST
+* [x] Build scaffold for search services in REST
 * [ ] Build scaffold for search services in GRAPHQL
 * [ ] Metrics dashbaord using local prometheus
+* [ ] Deploy scripts
+* [ ] Better code organization
+* [ ] Build out index schema: includes indexing and search updates
 * [ ] Load testing
 * [ ] Throttling on indexer
 

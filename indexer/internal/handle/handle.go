@@ -50,9 +50,9 @@ func Request(event events.DynamoDBEvent) error {
 	}
 
 	for _, record := range event.Records {
-		agentid := record.Change.Keys["agentid"].String() # FIXME: Check Type
-		datasetid := record.Change.Keys["datasetid"].String() # FIXME: Check Type
-		numVersions, _ := record.Change.NewImage["numVersions"].Integer() # FIXME: Check Type
+		agentid := record.Change.Keys["agentid"].String() // FIXME: Check Type
+		datasetid := record.Change.Keys["datasetid"].String() // FIXME: Check Type
+		numVersions, _ := record.Change.NewImage["numVersions"].Integer() // FIXME: Check Type
 
 		infoLogger.Printf("%s %s", agentid, datasetid)
 
